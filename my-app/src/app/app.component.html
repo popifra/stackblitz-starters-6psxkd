@@ -1,0 +1,55 @@
+<input
+  #inputGreetings
+  type="text"
+  [value]="initialValue"
+  (input)="(inputGreetings.value)"
+/>
+<button (click)="onCat()">Show cat Name</button>
+<p>{{ showGreetings }}</p>
+<p appHighlight>W il petolo</p>
+<p [appHighlight]="color">Colore passato alla direttiva</p>
+
+initialValue="Petolino"
+
+<h2>Choose a color:</h2>
+<input
+  type="radio"
+  id="color1"
+  name="color"
+  value="red"
+  (change)="changeColor(this)"
+  #color1
+/>
+<label for="color1">Red</label><br />
+<input
+  type="radio"
+  id="color2"
+  name="color"
+  value="green"
+  (click)="changeColor('green')"
+/>
+<label for="color2">Green</label><br />
+<input
+  type="radio"
+  id="color3"
+  name="color"
+  value="blue"
+  (click)="changeColor('violet')"
+/>
+<label for="color3">Blue</label>
+<br />
+<label for="ng model input"></label>
+<input [(ngModel)]="name" value="Gatto petolo" />
+<button (click)="getName()">Get Name</button>
+
+<app-first></app-first>
+
+<li *ngFor="let item of items">{{ item.name }}</li>
+<li>
+  <app-navigation-bar></app-navigation-bar>
+  <h1>My Angular App</h1>
+  <router-outlet>
+    <app-first></app-first>
+  </router-outlet>
+  <app-second></app-second>
+</li>
